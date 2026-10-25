@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f8fb;
+    color: #172b4d;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #102a43;
+    color: white;
+    padding: 18px;
+}
+
+.header-logo-titulo {
+    display: flex;
+    gap: 10px;
+}
+
+.header-logo-titulo img {
+    height: 3rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.contenedor {
+    display: flex;
+    min-height: 100vh;
+}
+
+aside {
+    width: 230px;
+    padding: 20px;
+    background-color: #e4edf5;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: #102a43;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #c7ddeb;
+}
+
+main {
+    padding: 30px;
+    min-width: 0;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #087ea4;
+    border-bottom: 2px solid #087ea4;
+    padding-bottom: 8px;
+}
+
+.tarjeta {
+    background-color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #dce7ef;
+}
+
+code {
+    background-color: #e4edf5;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+pre {
+    background-color: #102a43;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+footer {
+    background-color: #102a43;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: white;
+}

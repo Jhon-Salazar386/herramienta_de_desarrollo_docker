@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía básica de Docker</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-logo-titulo">
+            <img src="./img/docker-white-logo.png" alt="logo de docker">
+            <h1>Guía básica de Docker</h1>            
+        </div>
+
+        <p>Aprende qué es Docker y cómo utilizarlo.</p>
+    </header>
+
+    <div class="contenedor">
+
+        <aside>
+            <nav aria-label="Índice de contenidos">
+                <h2>Contenido</h2>
+
+                <a href="#que-es">¿Qué es Docker?</a>
+                <a href="#ventajas">Ventajas</a>
+                <a href="#comandos">Comandos básicos</a>
+                <a href="#compose">Docker Compose</a>
+            </nav>
+        </aside>
+
+        <main>
+
+            <section id="que-es">
+                <h2>¿Qué es Docker?</h2>
+
+                <p>
+                    Docker es una plataforma que permite ejecutar aplicaciones
+                    dentro de contenedores. Estos incluyen los elementos que
+                    necesita una aplicación para funcionar, como sus bibliotecas
+                    y dependencias.
+                </p>
+
+                <div class="tarjeta">
+                    <h3>¿Qué es un contenedor?</h3>
+                    <p>
+                        Es un entorno aislado donde se ejecuta una aplicación.
+                        Ayuda a que funcione de manera similar en diferentes
+                        ordenadores y servidores.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>¿Qué es una imagen?</h3>
+                    <p>
+                        Es una plantilla que contiene lo necesario para crear
+                        un contenedor.
+                    </p>
+                </div>
+            </section>
+
+            <section id="ventajas">
+                <h2>Ventajas de Docker</h2>
+
+                <div class="tarjeta">
+                    <h3>1. Portabilidad</h3>
+                    <p>
+                        Permite ejecutar aplicaciones en diferentes equipos
+                        que tengan Docker instalado y sean compatibles.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>2. Consistencia</h3>
+                    <p>
+                        Ayuda a mantener un entorno parecido durante el
+                        desarrollo, las pruebas y la ejecución de una aplicación.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>3. Aislamiento</h3>
+                    <p>
+                        Las aplicaciones pueden ejecutarse en contenedores
+                        separados, con sus propias dependencias.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>4. Facilidad para desplegar</h3>
+                    <p>
+                        Facilita distribuir aplicaciones y ponerlas en marcha
+                        sin tener que configurar manualmente cada dependencia.
+                    </p>
+                </div>
+            </section>
+
+            <section id="comandos">
+                <h2>Comandos básicos</h2>
+
+                <div class="tarjeta">
+                    <p><code>docker --version</code></p>
+                    <p>Muestra la versión instalada de Docker.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker pull nginx</code></p>
+                    <p>Descarga la imagen de Nginx.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker images</code></p>
+                    <p>Muestra las imágenes descargadas.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker run hello-world</code></p>
+                    <p>Ejecuta un contenedor de prueba.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker ps</code></p>
+                    <p>Muestra los contenedores en ejecución.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker ps -a</code></p>
+                    <p>Muestra todos los contenedores, incluidos los detenidos.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker stop nombre_contenedor</code></p>
+                    <p>Detiene un contenedor en ejecución.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Ejemplo práctico</h3>
+
+                    <p>Este comando inicia un servidor web Nginx:</p>
+
+                    <pre><code>docker run --name mi-web -d -p 8080:80 nginx</code></pre>
+
+                    <p>Significado de las partes:</p>
+
+                    <ul>
+                        <li><code>run</code>: crea e inicia un contenedor.</li>
+                        <li><code>--name mi-web</code>: asigna el nombre mi-web.</li>
+                        <li><code>-d</code>: ejecuta el contenedor en segundo plano.</li>
+                        <li><code>-p 8080:80</code>: conecta el puerto 8080 del ordenador con el puerto 80 del contenedor.</li>
+                        <li><code>nginx</code>: indica la imagen que se utilizará.</li>
+                    </ul>
+
+                    <p>
+                        Después, abre
+                        <a href="http://localhost:8080">http://localhost:8080</a>
+                        en el navegador.
+                    </p>
+                </div>
+            </section>
+
+            <section id="compose">
+                <h2>Docker Compose</h2>
+
+                <p>
+                    Docker Compose permite definir y ejecutar varios servicios
+                    mediante un archivo de configuración llamado
+                    <code>compose.yaml</code>.
+                </p>
+
+                <div class="tarjeta">
+                    <h3>Ejemplo de compose.yaml</h3>
+
+                    <pre><code>services:
+    web:
+        image: nginx:alpine
+        ports:
+        - "8080:80"
+        restart: unless-stopped</code></pre>
+                </div>
+
+                <h3>¿Qué significa cada parte?</h3>
+
+                <div class="tarjeta">
+                    <p><code>services:</code></p>
+                    <p>
+                        Declara los servicios que formarán parte de la aplicación.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>web:</code></p>
+                    <p>
+                        Es el nombre que le damos al servicio. Podría llamarse
+                        también servidor, aplicacion u otro nombre.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>image: nginx:alpine</code></p>
+                    <p>
+                        Indica que se utilizará la imagen de Nginx con la
+                        variante Alpine.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>ports:</code></p>
+                    <p>
+                        Permite conectar puertos del ordenador con los del
+                        contenedor. En "8080:80", el 8080 es
+                        el puerto del ordenador y el 80 es el del contenedor.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>restart: unless-stopped</code></p>
+                    <p>
+                        Hace que Docker reinicie el contenedor automáticamente,
+                        salvo que se haya detenido manualmente.
+                    </p>
+                </div>
+
+                <h3>Comandos de Docker Compose</h3>
+
+                <div class="tarjeta">
+                    <p><code>docker compose up -d</code></p>
+                    <p>Crea e inicia los servicios en segundo plano.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker compose ps</code></p>
+                    <p>Muestra el estado de los servicios.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker compose logs -f</code></p>
+                    <p>Muestra los registros de los servicios.</p>
+                </div>
+
+                <div class="tarjeta">
+                    <p><code>docker compose down</code></p>
+                    <p>
+                        Detiene y elimina los contenedores y la red creados
+                        por Compose. Normalmente conserva los volúmenes.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>¿Cómo probar el ejemplo?</h3>
+
+                    <ol>
+                        <li>Crea una carpeta para el proyecto.</li>
+                        <li>Guarda el código en un archivo llamado <code>compose.yaml</code>.</li>
+                        <li>Abre una terminal dentro de esa carpeta.</li>
+                        <li>Ejecuta <code>docker compose up -d</code>.</li>
+                        <li>Visita http://localhost:8080</li>
+                        <li>Cuando termines, ejecuta <code>docker compose down</code>.</li>
+                    </ol>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>Guía introductoria de Docker</p>
+        <p>
+            <a href="https://docs.docker.com/" target="_blank">
+                Documentación oficial de Docker
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
