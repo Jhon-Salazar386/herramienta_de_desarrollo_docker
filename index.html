@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía básica de Docker</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/main.js"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <header>
         <div class="header-logo-titulo">
             <img src="./img/docker-white-logo.png" alt="logo de docker">
-            <h1>Guía básica de Docker</h1>            
+            <h1>Guía básica de Docker</h1>
         </div>
 
         <p>Aprende qué es Docker y cómo utilizarlo.</p>
@@ -260,6 +261,23 @@
                         <li>Cuando termines, ejecuta <code>docker compose down</code>.</li>
                     </ol>
                 </div>
+            </section>
+
+            <section id="interaccion-1">
+                <h2>1. Primera interacción: probar JavaScript</h2>
+
+                <p>
+                    Pulsa el botón para comprobar que JavaScript
+                    puede modificar el contenido de la página.
+                </p>
+
+                <button id="btn-mensaje" type="button">
+                    Probar interacción
+                </button>
+
+                <p id="mensaje" aria-live="polite">
+                    Aquí aparecerá el resultado.
+                </p>
             </section>
 
         </main>
