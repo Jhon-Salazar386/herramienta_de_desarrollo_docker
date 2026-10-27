@@ -1,3 +1,5 @@
+import { mostrarCaracteristicas } from "./interfaz.js";
+
 const botonMensaje = document.getElementById("btn-mensaje");
 const mensaje = document.getElementById("mensaje");
 
@@ -9,7 +11,7 @@ botonMensaje.addEventListener("click", () => {
 
 botonMensaje.addEventListener("click", () => {
 
-    console.log("Se ha pulsado el botón de interacción")
+    console.log("Se ha pulsado el botón de interacción");
 
 });
 
@@ -27,4 +29,12 @@ botonInformacion.addEventListener("click", () => {
     }
 
     botonInformacion.setAttribute("aria-expanded", String(!estaOculto));
+});
+
+const busqueda = document.querySelector("#busqueda");
+
+mostrarCaracteristicas();
+
+busqueda.addEventListener("input", () => {
+    mostrarCaracteristicas(busqueda.value);
 });
