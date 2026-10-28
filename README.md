@@ -1,5 +1,11 @@
 # Herramienta de desarrollo Docker
 
+## Que ejecuta el cliente
+
+  El cliente es el navegador que muestra la pagina de la herramienta de desarrollo. Ejecuta el codigo Javascript para que
+  los botones muestren y oculten información y para buscar caracteristicas. Tambien carga el HTML y aplica los estilos
+  CSS.
+
 ## Funciones JavaScript y instrucciones de ejecución
 
 - Funcionalidad 1: Del mensaje de consola a la pagina web
@@ -39,6 +45,12 @@
    Método de uso: Posicionarse en su respectiva sección, alli habra un input y una serie de tarjetas, usar el campo de texto,
   se actualizara la cantidad de tarjetas, dependiendo de cuantas coincidencias existan.
   
-   Ejemplo: Al introducir la palabra "Contenedores" dentro del campo, el parrafo mostrara 1 coincidencia y la lista mostrara el
-  resultado.
-  *role="textbox", aria-multiline="true", aria-placeholder="Enter file contents here", aria-autocomplete="list"**aria-labelledby="codemirror-label focus-trap-help-panel"*
+   Ejemplo: Al introducir la palabra "Contenedores" dentro del campo, el parrafo mostrara 1 coincidencia y la lista
+   mostrara el resultado.
+
+## Captura de pestaña de red
+
+Para comprobar que los javascripts se habian importado correctamente, entre al menu de herramientas de desarrollador, y
+entre en el apartado de redes, al principio no aparecio nada, pero desactive el cache y recargue la pagina.
+
+<img width="610" height="302" alt="image" src="https://github.com/user-attachments/assets/12d9eb25-0edf-4163-b3c6-8ec38920cd26" />
