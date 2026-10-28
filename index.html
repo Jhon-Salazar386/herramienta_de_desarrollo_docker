@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía básica de Docker</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/main.js"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <header>
         <div class="header-logo-titulo">
             <img src="./img/docker-white-logo.png" alt="logo de docker">
-            <h1>Guía básica de Docker</h1>            
+            <h1>Guía básica de Docker</h1>
         </div>
 
         <p>Aprende qué es Docker y cómo utilizarlo.</p>
@@ -29,6 +30,9 @@
                 <a href="#ventajas">Ventajas</a>
                 <a href="#comandos">Comandos básicos</a>
                 <a href="#compose">Docker Compose</a>
+                <a href="#interaccion-1">Consola a la pagina</a>
+                <a href="#interaccion-2">Mostrar informacion</a>
+                <a href="#interaccion-3">Caracteristicas de docker</a>
             </nav>
         </aside>
 
@@ -260,6 +264,80 @@
                         <li>Cuando termines, ejecuta <code>docker compose down</code>.</li>
                     </ol>
                 </div>
+            </section>
+
+            <section id="interaccion-1">
+                <h2>1. Primera interacción: probar JavaScript</h2>
+
+                <p>
+                    Pulsa el botón para comprobar que JavaScript
+                    puede modificar el contenido de la página.
+                </p>
+
+                <button id="btn-mensaje" type="button">
+                    Probar interacción
+                </button>
+
+                <p id="mensaje" aria-live="polite">
+                    Aquí aparecerá el resultado.
+                </p>
+            </section>
+
+            <section id="interaccion-2">
+                <h2>2. Segunda interacción: mostrar información</h2>
+
+                <p>
+                    Pulsa el botón para consultar información adicional
+                    sobre Docker.
+                </p>
+
+                <button id="btn-informacion" type="button" aria-expanded="false" aria-controls="detalle-docker"> Mostrar información</button>
+
+                <div id="detalle-docker" class="oculto">
+                    <div class="tarjeta">
+                        <h3>Instalación</h3>
+                        <p>
+                            Docker puede instalarse mediante Docker Desktop
+                            o Docker Engine, según el sistema operativo.
+                        </p>
+                    </div>
+
+                    <div class="tarjeta">
+                        <h3>Ventajas</h3>
+                        <p>
+                            Los contenedores ayudan a mantener entornos
+                            consistentes y facilitan la distribución
+                            de aplicaciones.
+                        </p>
+                    </div>
+
+                    <div class="tarjeta">
+                        <h3>Extensiones y herramientas</h3>
+                        <p>
+                            Puedes utilizar Docker Compose para gestionar
+                            aplicaciones compuestas por varios servicios.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interaccion-3">
+                <h2>3. Tercera interacción: características de Docker</h2>
+
+                <p>
+                    Las siguientes características se generan mediante
+                    JavaScript. Utiliza el buscador para filtrarlas.
+                </p>
+
+                <label for="busqueda">
+                    Buscar características:
+                </label>
+
+                <input type="search" id="busqueda" placeholder="Ej: imágenes, redes..." autocomplete="off">
+
+                <p id="resultado-busqueda" aria-live="polite"></p>
+
+                <div id="lista-caracteristicas"></div>
             </section>
 
         </main>
